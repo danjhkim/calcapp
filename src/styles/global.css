@@ -118,4 +118,9 @@ tr, td {
 
 td:active {
    box-shadow: -1px -1px 2px .5px black;
+}  
+
+
+@media screen and (max-width:600px) {
+    
 }

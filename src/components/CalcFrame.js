@@ -16,55 +16,6 @@ const CalcFrame = () => {
     const [op, setOp] = useState(null)
     const [timing, setTiming] = useState(false)
 
-    useEffect(() => {
-        if (timing) {
-            doMath(op)
-            setTiming(false)
-        }
-    }, [timing])
-
-    const doMath = (op) => {
-        let parseNum1 = parseFloat(firstNum)
-        let parseNum2 = parseFloat(secondNum)
-        let ans = operators[op](parseNum1, parseNum2)
-        let stringAns = ans.toString()
-        if (stringAns.length > 10) {
-            let covertednum = ans.toPrecision(10)
-            setResult(covertednum)
-            opScreenSet('')
-        } else {
-            setResult(stringAns)
-            opScreenSet('')
-        }
-    }
-
-    // const operand = (value) => {
-    //     if (!firstNum) {
-    //         console.log('first')
-    //         setFirstNum(result)
-    //         setOp(value)
-    //         opScreenSet(`${result} ${value}`)
-    //         setResult('')
-    //     } else if (firstNum && result && op === value) {
-    //         if (!secondNum) {
-    //             setSecondNum(result)
-    //             setTiming(true)
-    //         } else if (secondNum && firstNum) {
-    //             setFirstNum(result)
-    //             setTiming(true)
-    //         }
-    //     } else if (value === '=') {
-    //         if (!secondNum) {
-    //             console.log('test')
-    //             setSecondNum(result)
-    //             setTiming(true)
-    //         } else if (secondNum && firstNum) {
-    //             setFirstNum(result)
-    //             setTiming(true)
-    //         }
-    //     }
-    // }
-
     const operand = (value) => {
         if (!firstNum) {
             console.log('first')
@@ -134,6 +85,29 @@ const CalcFrame = () => {
         setFirstNum('')
         setSecondNum('')
     }
+
+    const doMath = (op) => {
+        let parseNum1 = parseFloat(firstNum)
+        let parseNum2 = parseFloat(secondNum)
+        let ans = operators[op](parseNum1, parseNum2)
+        let stringAns = ans.toString()
+        if (stringAns.length > 10) {
+            let covertednum = ans.toPrecision(10)
+            setResult(covertednum)
+            opScreenSet('')
+        } else {
+            setResult(stringAns)
+            opScreenSet('')
+        }
+    }
+
+    useEffect(() => {
+        if (timing) {
+            doMath(op)
+            setTiming(false)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [timing])
 
     return (
         <div className="calcbody">
