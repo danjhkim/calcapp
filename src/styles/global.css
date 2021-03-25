@@ -1,7 +1,7 @@
 body {
     color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size:3em;
+    font-size:6vmin;
     font-size-adjust: inherit;
     font-weight: 700;
     background-color: #f3f0f1;
@@ -34,36 +34,52 @@ main {
     border: 8px solid rgb(212, 142, 154);
 }
 
-
 .calcscreen {
     width: 75%;
     height:12%;
-    background-color: aliceblue;
+    background-color: white;
     margin: 50px 0;
     border-radius: 8px;
     box-shadow: -1px -1px 5px 2px black;
     font-size: 1em;
     color: black;
-
+    position: relative;
 }
 
 .result {
-    background-color: aliceblue;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    border-radius: 10em;
+    background-color: white;
     height:auto;
     width:auto;
-    font-size:.8em;
+    font-size:.9em;
+    height:100%;
+    flex:1;
+    position: relative;
+}
+
+.autoscale {
+    display: inline-block;
+    padding: 7px 15px;
+    position: absolute;
+    right: 0;
+    transform-origin: right;
 }
 
 .openrand {
-    font-size:40%;
-    height:20px;
+    background-color: white;
+    border-radius: 10em;
+    font-size:30%;
     color:black;
+    position: absolute;
+    right:3%;
     text-align: center;
-    justify-content: flex-end;
-    position: relative;
+    top:0px;
+    z-index: 100;
+    padding-left: 1em;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 95%;
 }
 
 .pad {
@@ -121,6 +137,63 @@ td:active {
 }  
 
 
-@media screen and (max-width:600px) {
-    
+@media screen and (max-width: 700px) { 
+    .pad {
+        height:80%;
+        margin-bottom: .8em;
+        margin-top: .5em;
+        box-sizing: border-box;
+    }
+
+    .calcscreen {
+        width: 75%;
+        height:15%;
+        background-color: white;
+        margin-top: .6em;
+        margin-bottom: .4em;
+    }
+
+    .autoscale {
+       padding: 5px 12px;
+    }
+
 }
+
+@media screen and (max-width: 520px) { 
+    .calcscreen {
+        width: 6em;
+        height:1.3em;
+    }
+
+    .result {
+        font-size:.8em;
+    }
+}
+
+@media screen and (max-width: 350px) { 
+    .calcscreen {
+        width: 5.5em;
+        height:1.1em;
+    }
+
+    .result {
+        font-size:.6em;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .calcbody {
+        height:100%;
+    }
+
+    .calcscreen {
+        height:1.5em;
+    }
+    .autoscale {
+       padding: 0 8px;
+       padding-top: 8px;
+    }
+ 
+}
+
+

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const CalcFrame = () => {
     var operators = {
@@ -15,6 +15,25 @@ const CalcFrame = () => {
     const [opScreen, opScreenSet] = useState('')
     const [op, setOp] = useState(null)
     const [timing, setTiming] = useState(false)
+    const [scale, setScale] = useState(1)
+    const node = useRef()
+
+    useEffect(() => {
+        const parentNode = node.current.parentNode
+        const availableWidth = parentNode.offsetWidth
+        const actualWidth = node.current.offsetWidth
+        const actualScale = availableWidth / actualWidth
+
+        if (scale === actualScale)
+            return
+
+        if (actualScale < 1) {
+            setScale(actualScale)
+        } else if (scale < 1) {
+            setScale(1)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [result])
 
     const operand = (value) => {
         if (!firstNum) {
@@ -53,7 +72,7 @@ const CalcFrame = () => {
     }
 
     const keyvalue = (value) => {
-        if (result.length > 14) {
+        if (result.length >= 100) {
             return
         } else if (result.includes('.') && value === '.') {
             return
@@ -91,7 +110,7 @@ const CalcFrame = () => {
         let parseNum2 = parseFloat(secondNum)
         let ans = operators[op](parseNum1, parseNum2)
         let stringAns = ans.toString()
-        if (stringAns.length > 10) {
+        if (stringAns.length >= 12) {
             let covertednum = ans.toPrecision(10)
             setResult(covertednum)
             opScreenSet('')
@@ -113,7 +132,7 @@ const CalcFrame = () => {
         <div className="calcbody">
             <div className="calcscreen">
                 <div className="openrand">{opScreen}</div>
-                <div className="result">{result}</div>
+                <div className="result"><div className="autoscale" style={{ transform: `scale(${scale},${scale})` }} ref={node}>{result}</div></div>
             </div>
             <div className="pad">
                 <table>
