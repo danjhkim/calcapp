@@ -75,7 +75,6 @@ main {
     text-align: center;
     top:0px;
     z-index: 100;
-    padding-left: 1em;
     box-sizing: border-box;
     white-space: nowrap;
     overflow: hidden;
@@ -117,6 +116,7 @@ td {
     text-align: center;
     color:white;
     background-color: #724b95;
+    cursor: pointer;
 }
 
 tr, td {
