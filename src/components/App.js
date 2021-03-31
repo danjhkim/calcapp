@@ -1,7 +1,6 @@
 import React from 'react'
 
 import CalcFrame from '../components/CalcFrame'
-import { MathStore } from '../contexts/MathContext';
 import { OpStore } from '../contexts/OperandContext'
 
 class App extends React.Component {
@@ -9,11 +8,9 @@ class App extends React.Component {
         return (
             <main>
                 <div className="wrapper">
-                    <MathStore>
-                        <OpStore>
-                            <CalcFrame />
-                        </OpStore>
-                    </MathStore>
+                    <OpStore>
+                        <CalcFrame />
+                    </OpStore>
                 </div>
             </main>
         )
