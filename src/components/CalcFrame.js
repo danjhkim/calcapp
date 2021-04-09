@@ -25,7 +25,7 @@ const CalcFrame = () => {
             setScale(1)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [opcontext.result])
+    }, [opcontext.result, opcontext.answer])
 
     return (
         <div className="calcbody">
