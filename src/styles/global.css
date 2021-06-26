@@ -40,7 +40,7 @@ main {
 
 .calcscreen {
 	width: 75%;
-	height: 4.5rem;
+	min-height: 4.5rem;
 	background-color: white;
 	margin: 50px 0;
 	border-radius: 8px;
@@ -51,35 +51,36 @@ main {
 }
 
 .result {
-	border-radius: 10em;
-	background-color: white;
-	height: auto;
-	width: auto;
+	background-color: transparent;
+	width: 100%;
 	font-size: 0.9em;
 	height: 100%;
 	flex: 1;
 	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .autoscale {
 	display: inline-block;
 	padding: 7px 15px;
 	position: absolute;
-	right: 0;
+	right: 1%;
 	transform-origin: right;
 }
 
 .openrand {
-	background-color: white;
+	background-color: transparent;
 	border-radius: 10em;
-	font-size: 2rem;
+	font-size: 1rem;
 	color: black;
 	position: absolute;
 	text-align: center;
 	z-index: 100;
 	box-sizing: border-box;
 	white-space: nowrap;
-	overflow: hidden;
+	overflow: scroll;
 	width: 100%;
 }
 
@@ -141,75 +142,37 @@ td:active {
 	background-color: #8f8c45;
 }
 
-@media screen and (max-width: 700px) {
-	.autoscale {
-		padding: 5px 12px;
-	}
+@media screen and (max-width: 630px) {
 }
 
-@media screen and (max-width: 520px) {
-	.pad {
-		width: 80%;
-		height: 65%;
-	}
-	.calcscreen {
-		width: 3em;
-		height: 1.3em;
-	}
-
-	.result {
-		font-size: 0.8em;
-	}
-
-	td {
-		width: 80rem;
-	}
-}
-
-@media screen and (max-width: 520px) {
-	.calcscreen {
-		width: 6em;
-		height: 1.5em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.result {
-		font-size: 0.8em;
-	}
-}
-
-@media screen and (max-width: 500px) {
-	.calcscreen {
-		width: 80%;
-		height: 1.5em;
-	}
-	.result {
+@media screen and (max-width: 580px) {
+	.openrand {
 		width: 100%;
-	}
-
-	.result {
-		font-size: 0.6em;
+		align-self: center;
 	}
 }
 
+@media screen and (max-width: 520px) {
+}
+
 @media screen and (max-width: 500px) {
+	.calcscreen {
+		width: 80%;
+		height: 1.5em;
+	}
+
 	.calcscreen {
 		height: 1.8em;
 	}
 
-	.result {
-		font-size: 0.6em;
+	.pad {
+		width: 17rem;
 	}
 }
+
 @media screen and (max-width: 400px) {
 	.calcscreen {
 		height: 1.8em;
-	}
-
-	.result {
-		font-size: 0.6em;
 	}
 	body {
 		color: black;
@@ -224,15 +187,25 @@ td:active {
 		justify-content: center;
 		align-items: center;
 	}
+	.pad {
+		width: 20rem;
+		height: 26rem;
+		background-color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 0px;
+		box-shadow: none;
+		box-sizing: border-box;
+		background-color: #0e351b;
+		outline: none;
+		border: none;
+	}
 }
 
 @media screen and (max-width: 350px) {
 	.calcscreen {
 		height: 1.8em;
-	}
-
-	.result {
-		font-size: 0.6em;
 	}
 }
 
