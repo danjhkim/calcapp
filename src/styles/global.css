@@ -84,6 +84,10 @@ main {
 	width: 100%;
 }
 
+::-webkit-scrollbar {
+	height: 1em;
+}
+
 .pad {
 	width: 20rem;
 	height: 26rem;
