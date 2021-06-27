@@ -168,6 +168,7 @@ td:active {
 @media screen and (max-width: 500px) {
 	.calcbody {
 		transform: scaleY(0.85);
+		transform: scalex(0.9);
 	}
 
 	.calcscreen {
@@ -178,6 +179,7 @@ td:active {
 @media screen and (max-width: 490px) {
 	.calcbody {
 		transform: scaleY(0.75);
+		transform: scalex(0.8);
 	}
 	.pad {
 		width: 75%;
@@ -192,10 +194,9 @@ td:active {
 @media screen and (max-width: 400px) {
 	.calcbody {
 		transform: scaleY(0.65);
+		transform: scalex(0.7);
 	}
-	.calcscreen {
-		height: 1.8em;
-	}
+
 	body {
 		color: black;
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -223,6 +224,7 @@ td:active {
 
 	.calcbody {
 		transform: scaleY(0.5);
+		transform: scalex(0.6);
 	}
 	td {
 		font-size: 2rem;
@@ -238,6 +240,7 @@ td:active {
 
 	.calcbody {
 		transform: scaleY(0.6);
+		transform: scalex(0.7);
 	}
 }
 
