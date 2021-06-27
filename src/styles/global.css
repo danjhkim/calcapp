@@ -28,7 +28,6 @@ main {
 
 .calcbody {
 	width: 30rem;
-	height: 40rem;
 	background-color: #a8c66c;
 	border-radius: 32px;
 	display: flex;
@@ -42,7 +41,7 @@ main {
 	width: 75%;
 	min-height: 4.5rem;
 	background-color: white;
-	margin: 50px 0;
+	margin: 3rem 0 1rem 0;
 	border-radius: 8px;
 	box-shadow: -1px -1px 5px 2px black;
 	font-size: 1em;
@@ -89,18 +88,25 @@ main {
 }
 
 .pad {
-	width: 20rem;
+	width: 23rem;
 	height: 26rem;
 	background-color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 10px;
-	box-shadow: 1px 1px 2px 1px black;
 	box-sizing: border-box;
-	background-color: #0e351b;
 	outline: none;
-	border: 4px solid #0e351b;
+	padding: 1.3rem;
+	box-sizing: content-box;
+	background-color: #a8c66c;
+	border-radius: 20px;
+}
+
+.liner {
+	border-radius: 10px;
+	border: 1px solid #0e351b;
+	background-color: #0e351b;
+	box-shadow: 1px 1px 2px 1px black;
 }
 
 table {
@@ -154,29 +160,28 @@ td:active {
 		width: 100%;
 		align-self: center;
 	}
-}
 
-@media screen and (max-width: 520px) {
+	.pad {
+		width: 21rem;
+	}
 }
 
 @media screen and (max-width: 500px) {
 	.calcscreen {
 		width: 80%;
-		height: 1.5em;
-	}
-
-	.calcscreen {
-		height: 1.8em;
+		margin: 2rem;
 	}
 
 	.pad {
-		width: 17rem;
+		width: 20rem;
+		height: 22rem;
+		padding: 2rem 2rem 4rem 2rem;
 	}
 }
 
 @media screen and (max-width: 400px) {
 	.calcscreen {
-		height: 1.8em;
+		margin-bottom: 0.1rem;
 	}
 	body {
 		color: black;
@@ -191,19 +196,9 @@ td:active {
 		justify-content: center;
 		align-items: center;
 	}
+
 	.pad {
-		width: 20rem;
-		height: 26rem;
-		background-color: white;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 0px;
-		box-shadow: none;
-		box-sizing: border-box;
-		background-color: #0e351b;
-		outline: none;
-		border: none;
+		height: 22rem;
 	}
 }
 
