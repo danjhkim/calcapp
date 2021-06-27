@@ -41,7 +41,7 @@ main {
 	width: 75%;
 	min-height: 4.5rem;
 	background-color: white;
-	margin: 3rem 0 1rem 0;
+	margin: 50px 0;
 	border-radius: 8px;
 	box-shadow: -1px -1px 5px 2px black;
 	font-size: 1em;
@@ -50,8 +50,8 @@ main {
 }
 
 .result {
-	background-color: transparent;
 	width: 100%;
+	height: 2rem;
 	font-size: 0.9em;
 	height: 100%;
 	flex: 1;
@@ -63,9 +63,11 @@ main {
 
 .autoscale {
 	display: inline-block;
-	padding: 7px 15px;
+	padding: 12px 15px;
 	position: absolute;
-	right: 1%;
+	right: 0%;
+	top: 42%;
+	-webkit-transform-origin: right;
 	transform-origin: right;
 }
 
@@ -79,27 +81,24 @@ main {
 	z-index: 100;
 	box-sizing: border-box;
 	white-space: nowrap;
-	overflow: scroll;
+	overflow: hidden;
 	width: 100%;
 }
 
-::-webkit-scrollbar {
-	height: 1em;
-}
-
 .pad {
-	width: 23rem;
+	width: 20rem;
 	height: 26rem;
 	background-color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-radius: 10px;
 	box-sizing: border-box;
 	outline: none;
-	padding: 1.3rem;
-	box-sizing: content-box;
+	padding-bottom: 2rem;
+	border-radius: 10px;
+	box-sizing: border-box;
 	background-color: #a8c66c;
-	border-radius: 20px;
 }
 
 .liner {
@@ -161,27 +160,41 @@ td:active {
 		align-self: center;
 	}
 
-	.pad {
-		width: 21rem;
+	.calcbody {
+		transform: scale(0.8);
 	}
 }
 
 @media screen and (max-width: 500px) {
-	.calcscreen {
-		width: 80%;
-		margin: 2rem;
+	.calcbody {
+		transform: scaleY(0.85);
 	}
 
+	.calcscreen {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 490px) {
+	.calcbody {
+		transform: scaleY(0.75);
+	}
 	.pad {
-		width: 20rem;
-		height: 22rem;
-		padding: 2rem 2rem 4rem 2rem;
+		width: 75%;
+		margin-bottom: 2rem;
+	}
+
+	.calcscreen {
+		width: 80%;
 	}
 }
 
 @media screen and (max-width: 400px) {
+	.calcbody {
+		transform: scaleY(0.65);
+	}
 	.calcscreen {
-		margin-bottom: 0.1rem;
+		height: 1.8em;
 	}
 	body {
 		color: black;
@@ -196,15 +209,35 @@ td:active {
 		justify-content: center;
 		align-items: center;
 	}
+	td {
+		font-size: 3rem;
+		padding: 0.2rem;
+		box-sizing: border-box;
+	}
+}
 
-	.pad {
-		height: 22rem;
+@media screen and (max-width: 365px) {
+	.calcscreen {
+		height: 1.8em;
+	}
+
+	.calcbody {
+		transform: scaleY(0.5);
+	}
+	td {
+		font-size: 2rem;
+		padding: 0.7rem;
+		box-sizing: border-box;
 	}
 }
 
 @media screen and (max-width: 350px) {
 	.calcscreen {
 		height: 1.8em;
+	}
+
+	.calcbody {
+		transform: scaleY(0.6);
 	}
 }
 
