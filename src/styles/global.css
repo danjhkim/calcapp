@@ -155,20 +155,18 @@ td:active {
 }
 
 @media screen and (max-width: 580px) {
+	.calcbody {
+		transform: scaleY(0.85);
+	}
 	.openrand {
 		width: 100%;
 		align-self: center;
-	}
-
-	.calcbody {
-		transform: scale(0.8);
 	}
 }
 
 @media screen and (max-width: 500px) {
 	.calcbody {
-		transform: scaleY(0.85);
-		transform: scalex(0.9);
+		transform: scaleY(0.9);
 	}
 
 	.calcscreen {
@@ -179,7 +177,6 @@ td:active {
 @media screen and (max-width: 490px) {
 	.calcbody {
 		transform: scaleY(0.75);
-		transform: scalex(0.8);
 	}
 	.pad {
 		width: 75%;
@@ -193,8 +190,11 @@ td:active {
 
 @media screen and (max-width: 400px) {
 	.calcbody {
-		transform: scaleY(0.65);
-		transform: scalex(0.7);
+		transform: scaleY(0.7);
+	}
+
+	.pad {
+		margin: 1rem;
 	}
 
 	body {
@@ -218,18 +218,8 @@ td:active {
 }
 
 @media screen and (max-width: 365px) {
-	.calcscreen {
-		height: 1.8em;
-	}
-
 	.calcbody {
-		transform: scaleY(0.5);
-		transform: scalex(0.6);
-	}
-	td {
-		font-size: 2rem;
-		padding: 0.7rem;
-		box-sizing: border-box;
+		transform: scaleY(0.6);
 	}
 }
 
@@ -239,21 +229,24 @@ td:active {
 	}
 
 	.calcbody {
-		transform: scaleY(0.6);
-		transform: scalex(0.7);
+		transform: scaleY(0.5);
+	}
+	.autoscale {
+		display: inline-block;
+		padding: 12px 15px;
+		position: absolute;
+		right: 0%;
+		top: 19%;
+		-webkit-transform-origin: right;
+		transform-origin: right;
 	}
 }
 
 @media screen and (max-width: 340px) {
 	.calcbody {
-		height: 100%;
+		transform: scaleY(0.6);
 	}
-
-	.calcscreen {
-		height: 1.5em;
-	}
-	.autoscale {
-		padding: 0 8px;
-		padding-top: 8px;
+	td {
+		font-size: 2.8rem;
 	}
 }
